@@ -17,6 +17,7 @@ angular.module('BookStore.booksList', ['ngRoute','commonModule'])
         $scope.books = [];
         $scope.bookCategories = [];
         $scope.searchQuery = "";
+        $scope.selectedCategories = {};
         $scope.searchByOptions = [{name:"Title",field:"title"},{name:'Author',field:"author"}];
         $scope.searchBy =$scope.searchByOptions[0];
         httpService.getBooks().then(function(res){
@@ -25,6 +26,19 @@ angular.module('BookStore.booksList', ['ngRoute','commonModule'])
 
         httpService.getBookCategories().then(function(res){
             $scope.bookCategories = res.data;
+            for(var i = 0; i < $scope.bookCategories.length; i++){
+                $scope.selectedCategories[$scope.bookCategories[i].category] = false;
+            }
+            $scope.$watchCollection('selectedCategories');
         });
+
+        $scope.selectCategory = function (category,value){
+            console.log($scope.selectedCategories);
+            //if($scope.selectedCategories.indexOf(category.category) == -1){
+            //    $scope.selectedCategories.push(category.category);
+            //}
+            //
+            //alert($scope.selectedCategories);
+        }
     }]);
 

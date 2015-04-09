@@ -12,7 +12,7 @@
         <!--<p>-->
         <div class="filter">
             <span class="filter-header"> Category</span>
-            <div ng-repeat="category in bookCategories"> <input type="checkbox" ng-value="category.category" ng-checked="selectCategory(category)">{{category.categoryName}}</div>
+            <div ng-repeat="category in bookCategories"> <input type="checkbox" ng-model="selectedCategories[category.category]" ng-change="selectCategory(category.category,event)">{{category.categoryName}}</div>
         </div>
         <!--</p>-->
     </div>
@@ -23,8 +23,13 @@
             <select ng-options="search.name for search in searchByOptions" ng-model="searchBy"></select>
             <input type="search" ng-model="searchQuery"></div>
 
-       <div class="table-wrapper">
-          <!-- <h1>Sortable Table of Search Queries</h1>-->
+        <div >
+            <div ng-repeat="book in books | bookSearchFilter:searchQuery:searchBy.field">
+                <a ng-href="#/booksList/{{$index}}"><book-card book="book" ></book-card></a>
+            </div>
+        </div>
+
+       <!--<div class="table-wrapper">
 
            <table class="books-grid" cellspacing="0" cellpadding="0">
                <thead>
@@ -45,6 +50,6 @@
                 </tbody>
                </table>
 
-       </div>
+       </div>-->
     </div>
 </div>
