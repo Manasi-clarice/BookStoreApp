@@ -17,7 +17,7 @@ angular.module('BookStore.booksList', ['ngRoute','commonModule'])
         $scope.books = [];
         $scope.bookCategories = [];
         $scope.searchQuery = "";
-        $scope.selectedCategories = {};
+        $scope.selectedCategories = {all : true};
         $scope.searchByOptions = [{name:"Title",field:"title"},{name:'Author',field:"author"}];
         $scope.searchBy =$scope.searchByOptions[0];
         httpService.getBooks().then(function(res){
@@ -29,7 +29,23 @@ angular.module('BookStore.booksList', ['ngRoute','commonModule'])
             for(var i = 0; i < $scope.bookCategories.length; i++){
                 $scope.selectedCategories[$scope.bookCategories[i].category] = false;
             }
-            $scope.$watchCollection('selectedCategories');
+            $scope.$watchCollection('selectedCategories',function(newCollection,oldCollection){
+                var noFilterFlag = true;
+                for(cat in newCollection){
+                    if(cat =='all'){
+                        continue;
+                    }else {
+                        if(newCollection[cat]==true){
+                            newCollection['all'] = false;
+                            noFilterFlag = false;
+                            break;
+                        }
+                    }
+                }
+                if(noFilterFlag == true){
+                    newCollection.all = true;
+                }
+            });
         });
 
         $scope.selectCategory = function (category,value){
