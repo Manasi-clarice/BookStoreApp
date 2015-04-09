@@ -1,0 +1,50 @@
+<div class="books-list-page">
+
+    <div class="left-filters-section">
+        Filters here..
+        <!--<p>-->
+        <div class="filter">
+            <span class="filter-header"> Price</span>
+            <div><input type="radio" name="price" ng-checked="filterByPrice(0,499)"> Less Than 500/-</div>
+            <div><input type="radio" name="price" ng-checked="filterByPrice(500,1000)"> 500 - 1000</div>
+        <!--</p>-->
+        </div>
+        <!--<p>-->
+        <div class="filter">
+            <span class="filter-header"> Category</span>
+            <div ng-repeat="category in bookCategories"> <input type="checkbox" ng-value="category.category" ng-checked="selectCategory(category)">{{category.categoryName}}</div>
+        </div>
+        <!--</p>-->
+    </div>
+
+    <div class="center-books-list-grid">
+        <div class="search-box-container">
+            <label>Search:</label>
+            <select ng-options="search.name for search in searchByOptions" ng-model="searchBy"></select>
+            <input type="search" ng-model="searchQuery"></div>
+
+       <div class="table-wrapper">
+          <!-- <h1>Sortable Table of Search Queries</h1>-->
+
+           <table class="books-grid" cellspacing="0" cellpadding="0">
+               <thead>
+               <tr>
+                   <th><span>Sr.No</span></th>
+                   <th><span>Title</span></th>
+                   <th><span>Price</span></th>
+                   <th><span>Rating</span></th>
+               </tr>
+               </thead>
+               <tbody>
+                   <tr ng-repeat="book in books | bookSearchFilter:searchQuery:searchBy.field">
+                       <td>{{$index + 1}}</td>
+                       <td class="lalign book-title"> <a href="#/booksList/{{$index}}">{{book.title}} </a><span class="book-author">By: {{book.author}}</span></td>
+                       <td>{{book.price}}/-</td>
+                       <td>{{book.rating}} </td>
+                   </tr>
+                </tbody>
+               </table>
+
+       </div>
+    </div>
+</div>

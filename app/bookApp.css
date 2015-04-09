@@ -1,0 +1,117 @@
+
+
+
+.home-center {
+    position: fixed;
+    top:40%;
+    left:40%;
+}
+.home-center .app-name{
+    color: #0081c2;
+    /*font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;*/
+    /*font-size: large;*/
+}
+a {
+  color: #0040D0;
+  text-decoration: underline;
+}
+a:hover{
+    color: #000066;
+}
+
+
+.books-list-page {
+    position: absolute;
+    height:100%;
+    width:100%;
+    top:0;
+    bottom:0;
+}
+
+.books-list-page .left-filters-section {
+    width: 20%;
+    height: 95%;
+    display: inline-block;
+    border: thin solid #006600;
+    overflow-y: scroll;
+    padding: 1%;
+}
+.books-list-page .center-books-list-grid{
+    width: 75%;
+    padding: 1%;
+    position: absolute;
+    display:inline-block;
+}
+
+
+.search-box-container{
+    width: 100%;
+}
+.search-box-container label{
+    font-family: "Bookman", Georgia, "Times New Roman", serif;
+    font-size: large;
+}
+input[type=search]{
+    background-color: #b3d4fc;
+    height: 20px;
+    width: 50%;
+    border-radius: 10px;
+    border-style: solid;
+
+}
+ .book-title{
+    font-family: "Bookman", Georgia, "Times New Roman", serif;
+    font-size: medium;
+    color: #008800;
+    text-decoration: underline;
+}
+
+table .book-title .book-author {
+    text-decoration: none !important;
+    font-size: small;
+    color: black;
+}
+
+.filter {
+    padding: 5px;
+    border: medium none #c2ccd1;
+    border-bottom-style: solid;
+}
+
+.books-grid {
+    overflow-y: auto;
+}
+
+.book-detail {
+    top: 100px;
+    left: 100px;
+    background-color: #E9DC51;
+    margin: 10%;
+    padding: 40px;
+}
+.book-detail .book-title {
+    font-family: Georgia;
+    font-size: large;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+}
+
+.book-detail .book-author{
+    font-family: "Bookman", Georgia, "Times New Roman", serif;
+    font-size: medium;
+    color: darkolivegreen;
+    text-align: right;
+}
+
+.book-detial .book-price{
+    font-family: "Bookman", Georgia, "Times New Roman", serif;
+    font-size: medium;
+    color: darkolivegreen;
+    text-align: right;
+}
+
+.book-detail label{
+    font-weight: bold;
+    color: #008800;
+}

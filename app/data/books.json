@@ -1,0 +1,31 @@
+[{
+  "title" : "A Brief History of Time",
+  "price" : 300,
+  "rating" : 3,
+  "author" : "Stephen Hawking",
+  "category" : "nonfiction"
+},{
+  "title" : "To Kill a Mockingbird",
+  "price" : 300,
+  "rating" : 3,
+  "author" : "Harper Lee",
+  "category" : "fiction"
+},{
+  "title" : "The Immortals of Meluha (Shiva Trilogy)",
+  "price" : 145,
+  "rating" : 3,
+  "author" : "Amish",
+  "category" : "fiction"
+},{
+  "title" : "The Alchemist",
+  "price" : 501,
+  "rating" : 3,
+  "author" : "Paulo Coelho",
+  "category" : "fiction"
+},{
+  "title" : "Harry Potter and the Philosopher's Stone",
+  "price" : 145,
+  "rating" : 3,
+  "author" : "J.K.Rowling",
+  "category" : "fiction"
+}]
