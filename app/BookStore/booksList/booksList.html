@@ -25,7 +25,8 @@
 
         <div >
             <div ng-repeat="book in books | bookSearchFilter:searchQuery:searchBy.field">
-                <a ng-href="#/booksList/{{$index}}" ng-if="selectedCategories[book.category] == true || selectedCategories.all == true"><book-card book="book" ></book-card></a>
+                <!--<a ng-href="#/booksList/{{$index}}" ng-if="selectedCategories[book.category] == true || selectedCategories.all == true"><book-card book="book" ></book-card></a>-->
+                <a  ui-sref="bookdetail({bookid: $index})" ng-if="selectedCategories[book.category] == true || selectedCategories.all == true"><book-card book="book" ></book-card></a>
             </div>
         </div>
 

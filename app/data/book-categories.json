@@ -4,4 +4,10 @@
 },{
   "category":"nonfiction",
   "categoryName" : "Non-Fiction"
+},{
+  "category" :"history",
+  "categoryName" : "History"
+},{
+  "category" : "philosophy",
+  "categoryName" : "Philosophy"
 }]

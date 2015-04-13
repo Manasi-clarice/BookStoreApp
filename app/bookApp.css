@@ -134,7 +134,7 @@ table .book-title .book-author {
 .book-card .book-card-img {
     margin: 2%;
     text-align: center;
-    background: url("resources/images/book.png") 200px ;
+    /*background: url("resources/images/book.png") 200px ;*/
     border: thin inset #000000;
     height: 80%;
 }

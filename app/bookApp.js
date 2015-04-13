@@ -6,15 +6,13 @@
 
 // Declare app level module which depends on views, and components
 angular.module('BookStore', [
-    'ngRoute',
+    'ngRoute','ui.router',
     'BookStore.home',
     'BookStore.booksList'/*,
     'commonModule'*/
-]).config(['$routeProvider', function($routeProvider) {
-    $routeProvider.otherwise({redirectTo: '/home'});
-   /* $routeProvider.when('/home', {
-        templateUrl: 'BookStore/home/home.html',
-        controller: 'View1Ctrl'
-    });*/
+]).config(['$routeProvider','$stateProvider','$urlRouterProvider', function($routeProvider, $stateProvider,$urlRouteProvider) {
+    //$routeProvider.otherwise({redirectTo: '/home'});
+    $urlRouteProvider.when('','/home');
+
 }]);
 

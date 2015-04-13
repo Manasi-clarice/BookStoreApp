@@ -3,10 +3,15 @@
  */
 
 
-angular.module('BookStore.home', ['ngRoute'])
-    .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/home', {
+angular.module('BookStore.home', ['ngRoute','ui.router'])
+    .config(['$routeProvider','$stateProvider','$urlRouterProvider', function($routeProvider ,$stateProvider,$urlRouterProvider) {
+       /* $routeProvider.when('/home', {
             templateUrl: 'BookStore/home/home.html',
+            controller: 'HomeController'
+        });*/
+        $stateProvider.state('home',{
+            url : '/home',
+            templateUrl :'BookStore/home/home.html',
             controller: 'HomeController'
         });
     }])

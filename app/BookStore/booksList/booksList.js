@@ -3,14 +3,24 @@
  */
 
 angular.module('BookStore.booksList', ['ngRoute','commonModule'])
-    .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/booksList', {
+    .config(['$routeProvider','$stateProvider','$urlRouterProvider', function($routeProvider, $stateProvider,$urlRouterProvider) {
+       /* $routeProvider.when('/booksList', {
             templateUrl: 'BookStore/booksList/booksList.html',
             controller: 'BookListController'
         });
         $routeProvider.when('/booksList/:bookid', {
             templateUrl: 'BookStore/booksList/views/book-detail.html',
             controller: 'bookDetailController'
+        });*/
+        $stateProvider.state('bookslist',{
+           url : "/booksList",
+            templateUrl: 'BookStore/booksList/booksList.html',
+            controller: 'BookListController'
+        })
+            .state ('bookdetail',{
+            url : "/bookslist/:bookid",
+            templateUrl :"BookStore/booksList/views/book-detail.html",
+            controller : 'bookDetailController'
         });
     }])
     .controller('BookListController',['$scope','HttpService',function($scope,httpService){
